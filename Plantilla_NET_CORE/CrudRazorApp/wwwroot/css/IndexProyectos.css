@@ -1,0 +1,148 @@
+﻿/* Fondo general y fuente */
+body {
+    background-color: #f5f6f7;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+}
+
+
+/* Contenedor superior con título y botón */
+.d-flex {
+    background-color: #f3f4f6;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Botón de nuevo proyecto */
+.btn-success {
+    background-color: #3b82f6;
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-success:hover {
+        background-color: #2563eb;
+    }
+
+/* Tabla general */
+.table {
+    background-color: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    /* 🔹 Líneas agregadas para espaciar las columnas */
+    border-collapse: separate !important;
+    border-spacing: 25px 12px !important; /* controla el espacio entre columnas y filas */
+}
+
+    /* Cabecera de la tabla */
+    .table thead {
+        background-color: transparent;
+    }
+
+        .table thead th {
+            background-color: #3b82f6;
+            color: white;
+            font-weight: 600;
+            border: none;
+            text-align: center;
+            border-radius: 6px;
+            padding: 0.8rem;
+            /* 🔹 Espaciado visual adicional entre encabezados */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+    /* Celdas del cuerpo */
+    .table tbody tr td {
+        background-color: white;
+        text-align: center;
+        vertical-align: middle;
+        border: none;
+        padding: 0.8rem;
+    }
+
+    .table tbody tr {
+        border-bottom: 8px solid #f5f6f7; /* efecto de tarjetas separadas */
+    }
+
+        .table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+/* Estilo para la columna de acciones */
+.text-end {
+    text-align: right !important;
+}
+
+/* Botones de acción */
+.btn-info {
+    background-color: #0ea5e9;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.btn-warning {
+    background-color: #facc15;
+    border: none;
+    color: #111827;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    border: none;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    margin-left: 5px;
+}
+
+/* Hover general en botones */
+.btn-info:hover {
+    background-color: #0284c7;
+}
+
+.btn-warning:hover {
+    background-color: #eab308;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+/* Tarjeta superior tipo “Categoría” */
+.categoria-box {
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.categoria-btn {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Bordes redondeados en toda la estructura */
+.table,
+.d-flex,
+.categoria-box {
+    border-radius: 12px;
+}

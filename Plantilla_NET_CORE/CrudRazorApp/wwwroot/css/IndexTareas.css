@@ -1,0 +1,122 @@
+﻿body {
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+}
+
+/* Contenedor de filtros */
+.filter-box {
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+    .filter-box .btn {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5rem 1.2rem;
+        font-weight: 600;
+        transition: background 0.2s ease;
+    }
+
+        .filter-box .btn:hover {
+            background-color: #2563eb;
+        }
+
+/* Botón “Nueva Tarea” */
+.btn-success {
+    background-color: #3b82f6 !important; /* mismo color que las columnas azules */
+    border: none;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-success:hover {
+        background-color: #2563eb !important; /* azul más oscuro al pasar el cursor */
+    }
+
+/* Tabla */
+.custom-table-container {
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 25px 15px !important; /* 🔹 Espaciado entre columnas y filas */
+}
+
+    .custom-table thead th {
+        background-color: #3b82f6;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        /* 🔹 Da sensación de separación visual */
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Filas y celdas del cuerpo */
+    .custom-table tbody tr {
+        background-color: white;
+        border-radius: 8px;
+    }
+
+    .custom-table td {
+        text-align: center;
+        padding: 0.9rem;
+        color: #374151;
+        border-top: none;
+    }
+
+    /* 🔹 Efecto de “tarjetas” separadas */
+    .custom-table tbody tr:not(:last-child) {
+        border-bottom: 10px solid #f3f4f6;
+    }
+
+/* Botones de acción */
+.btn-sm {
+    border-radius: 6px;
+    font-weight: 600;
+    margin-left: 0.2rem;
+}
+
+.btn-info {
+    background-color: #3b82f6;
+    border: none;
+}
+
+    .btn-info:hover {
+        background-color: #2563eb;
+    }
+
+.btn-warning {
+    background-color: #f59e0b;
+    border: none;
+    color: white;
+}
+
+    .btn-warning:hover {
+        background-color: #d97706;
+    }
+
+.btn-danger {
+    background-color: #ef4444;
+    border: none;
+}
+
+    .btn-danger:hover {
+        background-color: #dc2626;
+    }

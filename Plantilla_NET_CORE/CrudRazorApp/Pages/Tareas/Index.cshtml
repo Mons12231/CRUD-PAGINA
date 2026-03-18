@@ -1,0 +1,118 @@
+﻿@page
+@model CrudRazorApp.Pages.Tareas.IndexModel
+@{
+    ViewData["Title"] = "Gestor de Tareas";
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="~/css/IndexTareas.css" />
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="mb-0">Gestor de Tareas</h1>
+    <a class="btn btn-success" asp-page="Create">➕ Nueva Tarea</a>
+</div>
+
+<!-- Tabla -->
+<div class="custom-table-container">
+    <table class="custom-table table table-striped table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Proyecto</th>
+                <th>Tarea</th>
+                <th>Fecha inicio</th>
+                <th>Fecha finalización</th>
+                <th>Integrante</th>
+                <th>Estatus</th>
+                <th>Descripción</th>
+                <th class="text-end">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.ListaTareas != null && Model.ListaTareas.Any())
+            {
+                @foreach (var tarea in Model.ListaTareas)
+                {
+                    <tr>
+                        <td>
+                            <span class="badge bg-secondary">@tarea.Proyecto?.NombreProyecto</span>
+                        </td>
+                        <td>
+                            <strong>@tarea.NombreTarea</strong>
+                        </td>
+                        <td>@tarea.FechaInicio.ToString("dd/MM/yyyy")</td>
+                        <td>@tarea.FechaFinalizacion.ToString("dd/MM/yyyy")</td>
+                        <td>@tarea.Integrantes</td>
+                        <td>
+                            @if (tarea.Estatus == "Completada")
+                            {
+                                <span class="badge bg-success">✓ @tarea.Estatus</span>
+                            }
+                            else if (tarea.Estatus == "En Progreso")
+                            {
+                                <span class="badge bg-warning text-dark">⏳ @tarea.Estatus</span>
+                            }
+                            else if (tarea.Estatus == "Pendiente")
+                            {
+                                <span class="badge bg-info">⏸ @tarea.Estatus</span>
+                            }
+                            else if (tarea.Estatus == "Pausada")
+                            {
+                                <span class="badge bg-secondary">⏸ @tarea.Estatus</span>
+                            }
+                            else if (tarea.Estatus == "Cancelada")
+                            {
+                                <span class="badge bg-danger">✗ @tarea.Estatus</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">@tarea.Estatus</span>
+                            }
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(tarea.Descripcion))
+                            {
+                                @(tarea.Descripcion.Length > 40 ? tarea.Descripcion.Substring(0, 40) + "..." : tarea.Descripcion)
+                            }
+                            else
+                            {
+                                <span class="text-muted">Sin descripción</span>
+                            }
+                        </td>
+                        <td class="text-end">
+                            <a asp-page="Details" asp-route-id="@tarea.TareaId" class="btn btn-info btn-sm">
+                                <i class="bi bi-eye"></i> Ver
+                            </a>
+                            <a asp-page="Edit" asp-route-id="@tarea.TareaId" class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil"></i> Editar
+                            </a>
+                            <a asp-page="Delete" asp-route-id="@tarea.TareaId" class="btn btn-danger btn-sm">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="8" class="text-center text-muted py-5">
+                        <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                        <p class="mt-3">No hay tareas registradas</p>
+                        <a asp-page="Create" class="btn btn-success mt-2">
+                            ➕ Crear primera tarea
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.ListaTareas != null && Model.ListaTareas.Any())
+{
+    <div class="mt-3">
+        <p class="text-muted">
+            <strong>Total de tareas:</strong> @Model.ListaTareas.Count
+        </p>
+    </div>
+}

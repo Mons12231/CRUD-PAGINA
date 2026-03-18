@@ -1,0 +1,79 @@
+## --- Archivos de compilación ---
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]og/
+
+## --- Archivos de usuario y configuración local ---
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.csproj.user
+*.rsuser
+
+## --- Visual Studio ---
+.vs/
+.vscode/
+
+## --- Paquetes y dependencias ---
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+## --- Configuración temporal ---
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*.swp
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.tlog
+
+## --- Publicaciones y despliegues ---
+publish/
+wwwroot/lib/
+node_modules/
+dist/
+bundle/
+*.Publish.xml
+
+## --- Archivos generados ---
+Generated_Code/
+ServiceFabricBackup/
+ScaffoldingReadMe.txt
+
+## --- Secretos o configuraciones locales ---
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+## --- Sistema operativo ---
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+## --- JetBrains Rider ---
+.idea/
+
+## --- Otros ---
+*.pdb
+*.mdb
+*.opendb
+*.VC.db

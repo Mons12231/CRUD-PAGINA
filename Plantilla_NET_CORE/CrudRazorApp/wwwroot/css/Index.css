@@ -1,0 +1,144 @@
+﻿/* -------------------------
+   ESTILOS GENERALES
+-------------------------- */
+body {
+    background: url('../img/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+    margin: 0;
+    padding: 0;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.75);
+        z-index: -1;
+    }
+
+/* -------------------------
+   HERO SECTION
+-------------------------- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 90vh;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.hero-text {
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+    .hero-text h1 {
+        font-family: 'Californian FB', sans-serif;
+        font-weight: 700;
+        font-size: 2.8rem;
+        color: #111827;
+        margin-bottom: 1rem;
+    }
+
+.hero p {
+    color: #374151;
+    font-size: 1.25rem;
+    margin-top: 1.2rem;
+    margin-bottom: 2.2rem;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-image img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+.footer {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #111827;
+    padding: 3rem 0;
+    border-top: 1px solid #e5e7eb;
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.footer-text {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.footer-subtitle {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact li {
+    color: #374151;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.footer-divider {
+    margin: 2rem 0 1rem;
+    border-color: #e5e7eb;
+}
+
+.social-icon {
+    display: inline-block;
+    color: #111827;
+    font-size: 1.4rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+    .social-icon:hover {
+        color: #2563eb;
+    }
+
+/* -------------------------
+   RESPONSIVE
+-------------------------- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+}

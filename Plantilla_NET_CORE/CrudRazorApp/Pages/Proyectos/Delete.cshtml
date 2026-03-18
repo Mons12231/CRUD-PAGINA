@@ -1,0 +1,71 @@
+@page
+@model CrudRazorApp.Pages.Proyectos.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Proyecto";
+}
+
+<link rel="stylesheet" href="~/css/IndexProyectos.css" />
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h2 class="mb-0">🗑️ Eliminar Proyecto</h2>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning" role="alert">
+                        <strong>⚠️ Advertencia:</strong> ¿Está seguro de que desea eliminar este proyecto? Esta acción no se puede deshacer.
+                    </div>
+
+                    <dl class="row">
+                        <dt class="col-sm-4">Categoría:</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-primary">@Model.Proyecto.Categoria</span>
+                        </dd>
+
+                        <dt class="col-sm-4">Nombre del Proyecto:</dt>
+                        <dd class="col-sm-8">
+                            <strong>@Model.Proyecto.NombreProyecto</strong>
+                        </dd>
+
+                        <dt class="col-sm-4">Fecha de Inicio:</dt>
+                        <dd class="col-sm-8">@Model.Proyecto.FechaInicio.ToString("dd/MM/yyyy")</dd>
+
+                        <dt class="col-sm-4">Fecha de Finalización:</dt>
+                        <dd class="col-sm-8">@Model.Proyecto.FechaFinalizacion.ToString("dd/MM/yyyy")</dd>
+
+                        <dt class="col-sm-4">Integrante(s):</dt>
+                        <dd class="col-sm-8">@Model.Proyecto.Integrante</dd>
+
+                        <dt class="col-sm-4">Tareas:</dt>
+                        <dd class="col-sm-8">
+                            @if (!string.IsNullOrEmpty(Model.Proyecto.Tareas))
+                            {
+                                <div class="border p-3 bg-light rounded">
+                                    @Model.Proyecto.Tareas
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Sin tareas asignadas</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <form method="post">
+                        <input type="hidden" asp-for="Proyecto.ProyectoId" />
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-page="Index" class="btn btn-secondary">
+                                ← Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                🗑️ Confirmar Eliminación
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

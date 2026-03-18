@@ -1,0 +1,88 @@
+﻿@page
+@model CrudRazorApp.Pages.Proyectos.EditModel
+@{
+    ViewData["Title"] = "Editar Proyecto";
+}
+
+<link rel="stylesheet" href="~/css/IndexProyectos.css" />
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-warning text-dark">
+                    <h2 class="mb-0">✏️ Editar Proyecto</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="Proyecto.ProyectoId" />
+                        <input type="hidden" asp-for="Proyecto.FechaCreacion" />
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Proyecto.Categoria" class="form-label"></label>
+                            <select asp-for="Proyecto.Categoria" class="form-select">
+                                <option value="">-- Seleccione una categoría --</option>
+                                <option value="Desarrollo Web">Desarrollo Web</option>
+                                <option value="Desarrollo Móvil">Desarrollo Móvil</option>
+                                <option value="Investigación">Investigación</option>
+                                <option value="Diseño">Diseño</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <span asp-validation-for="Proyecto.Categoria" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Proyecto.NombreProyecto" class="form-label"></label>
+                            <input asp-for="Proyecto.NombreProyecto" class="form-control" />
+                            <span asp-validation-for="Proyecto.NombreProyecto" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Proyecto.FechaInicio" class="form-label"></label>
+                                <input asp-for="Proyecto.FechaInicio" class="form-control" type="date" />
+                                <span asp-validation-for="Proyecto.FechaInicio" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Proyecto.FechaFinalizacion" class="form-label"></label>
+                                <input asp-for="Proyecto.FechaFinalizacion" class="form-control" type="date" />
+                                <span asp-validation-for="Proyecto.FechaFinalizacion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Proyecto.Integrante" class="form-label"></label>
+                            <input asp-for="Proyecto.Integrante" class="form-control" />
+                            <span asp-validation-for="Proyecto.Integrante" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Proyecto.Tareas" class="form-label"></label>
+                            <textarea asp-for="Proyecto.Tareas" class="form-control" rows="4"></textarea>
+                            <span asp-validation-for="Proyecto.Tareas" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-page="Index" class="btn btn-secondary">
+                                ← Volver a la lista
+                            </a>
+                            <button type="submit" class="btn btn-warning">
+                                💾 Actualizar Proyecto
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

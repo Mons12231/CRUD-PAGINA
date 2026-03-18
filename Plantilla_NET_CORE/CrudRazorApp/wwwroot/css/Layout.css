@@ -1,0 +1,90 @@
+﻿/* --- Navbar general --- */
+.navbar {
+    padding: 1rem 3rem;
+    transition: background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar transparente (por defecto) */
+.custom-navbar {
+    background-color: transparent !important;
+    box-shadow: none;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.6s ease;
+}
+
+    /* Navbar al hacer scroll (efecto glassmorphism moderno) */
+    .custom-navbar.scrolled {
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        transition: background-color 0.6s ease, box-shadow 0.6s ease, backdrop-filter 0.6s ease;
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+/* Animación de aparición suave al hacer scroll */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo e identidad */
+.navbar-brand {
+    /*font-family: 'Georgia', 'Times New Roman', serif; */
+    font-weight: 700;
+    color: #111827 !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+    .navbar-brand img {
+        width: 45px;
+        height: 45px;
+        transition: transform 0.3s ease;
+    }
+
+        .navbar-brand img:hover {
+            transform: scale(1.05);
+        }
+
+/* Links del menú */
+.nav-link {
+    /* font-family: 'Georgia', 'Times New Roman', serif; */
+    color: #4b5563 !important;
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+    .nav-link:hover {
+        color: #111827 !important;
+        transform: translateY(-1px);
+    }
+
+/* Centrar el contenido */
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+/* Fondo general */
+body {
+    background-color: #fff;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    padding-top: 90px;
+}
+
+/* Contenedor principal */
+.page-content {
+    margin-top: 2rem;
+}
